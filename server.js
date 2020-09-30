@@ -10,7 +10,6 @@ const connection_url = 'mongodb+srv://admin:avinash@cluster0.nj8ss.mongodb.net/t
 
 
 
-
 // Middleware
 
 

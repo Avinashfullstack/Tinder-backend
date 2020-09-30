@@ -1,6 +1,8 @@
+import e from 'express';
 // importing
 import express from 'express'
 import mongoose from 'mongoose'
+import Cards from './dbCards.js'
 
 
 // App config
@@ -23,7 +25,17 @@ mongoose.connect(connection_url, {
 })
 
 // Api Endpoints
+ app.post('/tinder/cards',(req,res)=>{
+    const dbCard = req.body;
 
+    Cards.create(dbCard,(err,data)=>{
+        if (err){
+            res.status(500).send(err)
+        }else{
+            res.status(201).send(data)
+        }
+    })
+ })
 
 
 // listener

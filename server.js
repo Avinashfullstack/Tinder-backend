@@ -37,7 +37,16 @@ mongoose.connect(connection_url, {
     })
  })
 
+ app.get('/tinder/cards',(req,res)=>{
 
+    Cards.find((err,data)=>{
+        if (err){
+            res.status(500).send(err)
+        }else{
+            res.status(200).send(data)
+        }
+    })
+ })
 // listener
 
 app.listen(port, () => console.log(`listening on localhost :${port}`))

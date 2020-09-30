@@ -23,9 +23,7 @@ mongoose.connect(connection_url, {
 })
 
 // Api Endpoints
-app.get('/', (req, res) => {
-    res.status(200).send("hello world")
-})
+
 
 
 // listener
